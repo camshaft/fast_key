@@ -1,0 +1,8 @@
+{application, fast_key, [
+  {id, "fast_key"},
+  {description, "Super-tiny library for getting a value from a proplist"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {env, []}
+]}.
