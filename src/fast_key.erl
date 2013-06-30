@@ -8,6 +8,6 @@ get(Key, Proplist)->
 
 get(Key, Proplist, Default)->
   case lists:keyfind(Key, 1, Proplist) of
-    {_, undefined} -> Default;
+    false -> Default;
     {_, Value} -> Value
   end.
