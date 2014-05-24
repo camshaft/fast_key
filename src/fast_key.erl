@@ -3,6 +3,7 @@
 -export([get/2]).
 -export([get/3]).
 -export([set/3]).
+-export([remove/2]).
 
 get(Key, Proplist) ->
   get(Key, Proplist, undefined).
@@ -24,3 +25,8 @@ set(Key, Value, Map) when is_map(Map) ->
   maps:put(Key, Value, Map);
 set(Key, Value, Proplist) when is_list(Proplist) ->
   lists:keystore(Key, 1, Proplist, {Key, Value}).
+
+remove(Key, Map) when is_map(Map) ->
+  maps:remove(Key, Map);
+remove(Key, List) ->
+  lists:keydelete(Key, 1, List).
