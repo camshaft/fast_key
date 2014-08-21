@@ -4,6 +4,7 @@
 -export([get/3]).
 -export([set/3]).
 -export([remove/2]).
+-export([size/1]).
 
 get(Key, Proplist) ->
   get(Key, Proplist, undefined).
@@ -30,3 +31,8 @@ remove(Key, Map) when is_map(Map) ->
   maps:remove(Key, Map);
 remove(Key, List) ->
   lists:keydelete(Key, 1, List).
+
+size(Map) when is_map(Map) ->
+  maps:size(Map);
+size(List) ->
+  length(List).
